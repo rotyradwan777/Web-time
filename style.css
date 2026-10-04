@@ -1,40 +1,56 @@
+/* General Page Styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
-    color: #333;
+    color: #2d3748;
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
 }
 
+/* Main Website Title */
 h1 {
     color: #1a365d;
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 30px;
+    letter-spacing: 0.5px;
 }
 
+/* Section Subheadings */
 h2 {
     color: #2b6cb0;
-    margin-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 6px;
 }
 
+/* Content Cards (section & div blocks) */
 section, div {
     background: #ffffff;
-    padding: 20px;
+    padding: 22px 25px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     margin-bottom: 15px;
+    border-left: 5px solid #3182ce;
 }
 
+/* Inner Text Formatting */
 p {
-    line-height: 1.6;
-    font-size: 1.1rem;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin: 0;
+    color: #4a5568;
 }
 
+/* Horizontal Dividers */
 hr {
     border: none;
     height: 2px;
     background-color: #e2e8f0;
     margin: 25px 0;
 }
+
+
