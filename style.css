@@ -25,15 +25,16 @@ h2 {
     font-size: 1.4rem;
     border-bottom: 2px solid #edf2f7;
     padding-bottom: 6px;
-
 }
-.section-img {
-    width: 100%;        /* Forces the image width to fit 100% inside the section box */
-    max-width: 100%;    /* Prevents the image from ever overflowing the section */
-    height: 200px;      /* Sets a clean, standard height for all images */
-    object-fit: cover;  /* Crops/fits the image neatly without stretching or squishing it */
-    border-radius: 8px; /* Adds soft rounded corners */
-    margin-bottom: 15px;
+
+    .section-img {
+    width: 100%;          /* Keeps the image filling the section's width */
+    max-width: 300px;     /* Prevents the image from getting too wide */
+    height: 150px;        /* Makes the image shorter/smaller vertically */
+    object-fit: cover;    /* Prevents the image from stretching or looking distorted */
+    border-radius: 8px;   /* Soft corners */
+    display: block;
+    margin: 0 auto 15px auto; /* Centers the image inside the section */
 }
 
 /* Content Cards (section & div blocks) */
