@@ -28,13 +28,12 @@ h2 {
 }
 
     .section-img {
-    width: 100%;          /* Keeps the image filling the section's width */
-    max-width: 300px;     /* Prevents the image from getting too wide */
-    height: 150px;        /* Makes the image shorter/smaller vertically */
-    object-fit: cover;    /* Prevents the image from stretching or looking distorted */
-    border-radius: 8px;   /* Soft corners */
+    width: 200px;       /* Fixed width */
+    height: 140px;      /* Fixed height */
+    object-fit: cover;
     display: block;
-    margin: 0 auto 15px auto; /* Centers the image inside the section */
+    margin: 0 auto 15px auto; /* Centers image */
+    border-radius: 8px;
 }
 
 /* Content Cards (section & div blocks) */
