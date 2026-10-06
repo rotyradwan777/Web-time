@@ -16,18 +16,69 @@
         }
 
         body {
-            background: #f0f4f8;
+            background: #f0f4f8; /* Cool blue-gray background */
             color: #243b53;
             min-height: 100vh;
             padding-bottom: 60px;
         }
 
-        /* --- HEADER --- */
+        /* --- BRANDING & HEADER --- */
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px 15px 20px;
+            gap: 12px;
+        }
+
+        /* Circular Logo Styling */
+        .school-logo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #102a43, #0052cc);
+            border: 4px solid #ffffff;
+            box-shadow: 0 8px 18px rgba(0, 82, 204, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .school-logo:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .logo-icon {
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .logo-text {
+            font-size: 0.62rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            line-height: 1.1;
+        }
+
+        .logo-section-tag {
+            font-size: 0.5rem;
+            color: #60a5fa;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
         h1 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: #102a43;
-            padding: 30px 20px 15px 20px;
             font-weight: 800;
             letter-spacing: 0.5px;
         }
@@ -61,7 +112,6 @@
             transition: all 0.25s ease-in-out;
         }
 
-        /* Hover & Active States */
         nav a:hover {
             color: #0052cc;
             background-color: #f0f4ff;
@@ -96,7 +146,6 @@
             padding-bottom: 10px;
         }
 
-        /* Accent bar under titles */
         section h2::after {
             content: '';
             position: absolute;
@@ -108,7 +157,6 @@
             border-radius: 2px;
         }
 
-        /* Image Styling */
         .section-img {
             width: 100%;
             height: 280px;
@@ -124,25 +172,98 @@
             color: #334e68;
         }
 
+        /* --- AI GALLERY BUTTON --- */
+        .btn-container {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .ai-btn {
+            background: linear-gradient(135deg, #0052cc, #003e99);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(0, 82, 204, 0.25);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ai-btn:hover {
+            background: linear-gradient(135deg, #003e99, #102a43);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0, 82, 204, 0.35);
+        }
+
+        /* Hidden Gallery Grid */
+        .ai-gallery {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e4e7eb;
+        }
+
+        .ai-gallery.show {
+            display: grid;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .gallery-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #d9e2ec;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            filter: contrast(102%) brightness(98%); /* Matches cold tone theme */
+        }
+
+        .gallery-card p {
+            padding: 10px 12px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-align: center;
+            color: #243b53;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-            nav {
-                border-radius: 16px;
-                padding: 8px;
-            }
-            nav a {
-                padding: 6px 12px;
-                font-size: 0.85rem;
-            }
+            h1 { font-size: 1.8rem; }
+            nav { border-radius: 16px; padding: 8px; }
+            nav a { padding: 6px 12px; font-size: 0.85rem; }
+            .school-logo { width: 95px; height: 95px; }
+            .logo-text { font-size: 0.55rem; }
         }
     </style>
 </head>
 <body>
 
-    <h1>Bright Future School</h1>
+    <!-- Header with Circle Logo -->
+    <div class="header-container">
+        <div class="school-logo">
+            <span class="logo-icon">🎓</span>
+            <span class="logo-text">Bright Future<br>School</span>
+            <span class="logo-section-tag">• ABOUT •</span>
+        </div>
+        <h1>Bright Future School</h1>
+    </div>
 
     <!-- Navigation bar -->
     <nav>
@@ -154,14 +275,47 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Content Section -->
+    <!-- Main Content Section -->
     <div class="content-box">
         <section id="about">
             <h2>About Our School</h2>
             <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&h=200&q=80" alt="School Building" class="section-img">
             <p>Welcome to Bright Future School! We provide high-quality education, modern classrooms, and a supportive environment for all students.</p>
+
+            <!-- Interactive AI Photos Button -->
+            <div class="btn-container">
+                <button class="ai-btn" onclick="toggleGallery()">✨ View AI Campus Tour</button>
+            </div>
+
+            <!-- AI Photo Gallery Section -->
+            <div class="ai-gallery" id="aiGallery">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=500&q=80" alt="AI Science Campus">
+                    <p>Modern Science Wing</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=500&q=80" alt="AI Campus Courtyard">
+                    <p>Futuristic Courtyard</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500&q=80" alt="AI Smart Classroom">
+                    <p>Interactive Smart Lab</p>
+                </div>
+            </div>
         </section>
     </div>
+
+    <!-- Script to Handle Photo Display -->
+    <script>
+        function toggleGallery() {
+            const gallery = document.getElementById('aiGallery');
+            if (gallery.classList.contains('show')) {
+                gallery.classList.remove('show');
+            } else {
+                gallery.classList.add('show');
+            }
+        }
+    </script>
 
 </body>
 </html>
