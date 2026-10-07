@@ -251,6 +251,108 @@
             .school-logo { width: 95px; height: 95px; }
             .logo-text { font-size: 0.55rem; }
         }
+        .announcements-container {
+  font-family: system-ui, -apple-system, sans-serif;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin: 0;
+}
+
+.view-all {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.announcement-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.announcement-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.exam-border { border-left-color: #7c3aed; }
+.achievement-border { border-left-color: #059669; }
+.holiday-border { border-left-color: #d97706; }
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.pill-exam { background: #f3e8ff; color: #6b21a8; }
+.pill-achievement { background: #d1fae5; color: #065f46; }
+.pill-holiday { background: #fef3c7; color: #92400e; }
+
+time {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.announcement-card h3 {
+  font-size: 1.1rem;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+}
+
+.announcement-card p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+  flex-grow: 1;
+}
+
+.action-btn {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.action-btn:hover {
+  color: #2563eb;
+}
         /* Footer Styling */
 footer {
     background-color: #102a43; /* Dark Navy Cold Tone */
@@ -331,21 +433,54 @@ footer p {
             }
         }
     </script>
-    <section id="principal-message">
-            <h2>Principal's Welcome</h2>
+    <section class="announcements-container">
+  <div class="section-header">
+    <h2>Notice Board & Announcements</h2>
+    <a href="#" class="view-all">View All (12) →</a>
+  </div>
+
+  <div class="cards-grid">
+    <!-- Exam Schedule Card -->
+    <article class="announcement-card exam-border">
+      <div class="card-meta">
+        <span class="pill pill-exam">Exam Schedule</span>
+        <time>Oct 12, 2026</time>
+      </div>
+      <h3>Fall 2026 Mid-Term Examination Dates</h3>
+      <p>The detailed room allocations and timetable for undergraduate mid-terms are now available.</p>
+      <div class="card-footer">
+        <a href="#" class="action-btn">Download PDF</a>
+      </div>
+    </article>
+
+    <!-- Achievement Card -->
+    <article class="announcement-card achievement-border">
+      <div class="card-meta">
+        <span class="pill pill-achievement">Achievement</span>
+        <time>Oct 08, 2026</time>
+      </div>
+      <h3>1st Place: National Collegiate Robotics</h3>
+      <p>Congratulations to Team Alpha for securing gold in the Autonomous Rover division!</p>
+      <div class="card-footer">
+        <a href="#" class="action-btn">Read Story</a>
+      </div>
+    </article>
+
+    <!-- Holiday Reminder Card -->
+    <article class="announcement-card holiday-border">
+      <div class="card-meta">
+        <span class="pill pill-holiday">Holiday Notice</span>
+        <time>Oct 05, 2026</time>
+      </div>
+      <h3>Campus Closure: Autumn Break</h3>
+      <p>Administrative offices and academic blocks will remain closed from Oct 24 through Oct 26.</p>
+      <div class="card-footer">
+        <a href="#" class="action-btn">Library Hours</a>
+      </div>
+    </article>
+  </div>
+</section>
             
-            <div class="principal-card">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="School Principal" class="principal-img">
-                <div class="principal-info">
-                    <h3>Dr. Eleanor Vance</h3>
-                    <span class="principal-title">School Principal</span>
-                    <p class="principal-quote">
-                        "At Bright Future School, we believe that education extends far beyond textbooks. Our mission is to nurture curious minds, instill strong values, and empower students to become compassionate leaders of tomorrow."
-                    </p>
-                </div>
-            </div>
-        </section>
-    
     <footer>
     <div class="footer-content">
         <p>&copy; 2026 Bright Future School. All rights reserved.</p>
