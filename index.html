@@ -16,7 +16,7 @@
         }
 
         body {
-            background: #1e293b; 
+            background: #0f172a; /* Dark Navy Background */
             color: #f8fafc;
             min-height: 100vh;
             padding-bottom: 60px;
@@ -120,43 +120,42 @@
         nav a.active {
             color: #020617;
             background-color: #f59e0b;
-            box-shadow: 0 4px 12px rgba(0, 82, 204, 0.25);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
         }
 
         /* --- CONTENT CARD CONTAINER --- */
         .content-box {
             max-width: 850px;
-            margin: 0 auto 50px auto; /* Margin-bottom creates space between sections */
+            margin: 0 auto 50px auto;
             padding: 0 20px;
         }
 
         section#about {
-        background: #e2e8f0;
-    border-radius: 16px;
-    padding: 35px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    border: 1px solid #cbd5e1;
-    color: #0f172a;
-}
+            background: #e2e8f0; /* Slate Silver Section */
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid #cbd5e1;
+            color: #0f172a;
+        }
 
         section h2 {
             font-size: 1.8rem;
-    color: #102a43;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
+            color: #102a43;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
 
         section h2::after {
             content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 45px;
-    height: 4px;
-    background: #0052cc;
-    border-radius: 2px;
-}
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 45px;
+            height: 4px;
+            background: #0052cc;
+            border-radius: 2px;
         }
 
         .section-img {
@@ -170,12 +169,15 @@
 
         section p {
             font-size: 1.05rem;
-    line-height: 1.7;
-    color: #334e68;
-}
+            line-height: 1.7;
+            color: #334e68;
+        }
+
+        /* Highlighted Sentence Styles: Bold Navy Blue */
         section#about p span {
-    color: #fef08a !important; /* Bright soft yellow/gold highlight */
-}
+            color: #0f172a !important;
+            font-weight: 700;
+        }
 
         /* --- AI GALLERY BUTTON --- */
         .btn-container {
@@ -268,13 +270,6 @@
             margin: 0;
         }
 
-        .view-all {
-            color: #60a5fa;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -347,13 +342,6 @@
             margin-bottom: 16px;
         }
 
-        .action-btn {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
         /* Footer Styling */
         footer {
             background-color: #102a43;
@@ -394,6 +382,7 @@
     <!-- Navigation bar -->
     <nav>
         <a href="index.html" class="active">About</a>
+        <a href="classes.html">Classes</a>
         <a href="schedule.html">Schedule</a>
         <a href="facilities.html">Facilities</a>
         <a href="events.html">Events</a>
@@ -406,18 +395,17 @@
             <h2>About Our School</h2>
             <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&h=200&q=80" alt="School Building" class="section-img">
             <p> Welcome to Bright Future School! We provide high-quality education, modern classrooms, and a supportive environment for all students. 
-            <p> Welcome to Bright Future School! We provide high-quality education, modern classrooms, and a supportive environment for all students. 
-            <span style="color: #0f172a; font-weight: 700;">Our dedicated teachers inspire critical thinking, creativity, and a lifelong love for learning in every child.</span> 
-            <span style="color: #0f172a; font-weight: 700;">Through innovative programs and state-of-the-art facilities, we prepare our students to excel in a rapidly changing world.</span> 
-            <span style="color: #0f172a; font-weight: 700;">Together, we build a bright, confident, and successful community where every learner thrives.</span>
+                <span>Our dedicated teachers inspire critical thinking, creativity, and a lifelong love for learning in every child.</span> 
+                <span>Through innovative programs and state-of-the-art facilities, we prepare our students to excel in a rapidly changing world.</span> 
+                <span>Together, we build a bright, confident, and successful community where every learner thrives.</span>
             </p>
 
-            <!-- Interactive AI Photos Button (Now inside the section) -->
+            <!-- Interactive AI Photos Button -->
             <div class="btn-container">
-                <button class="ai-btn" onclick="toggleGallery()"> Our school</button>
+                <button class="ai-btn" onclick="toggleGallery()">✨ Our school</button>
             </div>
 
-            <!-- AI Photo Gallery Section (Now inside the section) -->
+            <!-- AI Photo Gallery Section -->
             <div class="ai-gallery" id="aiGallery">
                 <div class="gallery-card">
                     <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=500&q=80" alt="AI Science Campus">
@@ -432,7 +420,7 @@
         </section>
     </div>
 
-    <!-- Section 2: Notice Board & Announcements (Separated with gap) -->
+    <!-- Section 2: Notice Board & Announcements -->
     <section class="announcements-container">
         <div class="section-header">
             <h2>Notice Board & Announcements</h2>
@@ -447,8 +435,7 @@
                 </div>
                 <h3>Fall 2026 Mid-Term Examination Dates</h3>
                 <p>The detailed room allocations and timetable for undergraduate mid-terms are now available.</p>
-                <div class="card-footer">
-                </div>
+                <div class="card-footer"></div>
             </article>
 
             <!-- Achievement Card -->
@@ -459,8 +446,7 @@
                 </div>
                 <h3>1st Place: National Collegiate Robotics</h3>
                 <p>Congratulations to Team Alpha for securing gold in the Autonomous Rover division!</p>
-                <div class="card-footer">
-                </div>
+                <div class="card-footer"></div>
             </article>
 
             <!-- Holiday Reminder Card -->
@@ -471,8 +457,7 @@
                 </div>
                 <h3>Campus Closure: Autumn Break</h3>
                 <p>Administrative offices and academic blocks will remain closed from Oct 24 through Oct 26.</p>
-                <div class="card-footer">
-                </div>
+                <div class="card-footer"></div>
             </article>
         </div>
     </section>
@@ -495,5 +480,6 @@
 
 </body>
 </html>
+
 
    
