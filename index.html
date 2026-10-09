@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-         
         /* --- RESET & BASE STYLES --- */
         * {
             margin: 0;
@@ -17,7 +16,7 @@
         }
 
         body {
-            background: #020617; /*Slate 950 - Darkest Blue */
+            background: #020617; /* Slate 950 - Darkest Blue */
             color: #f8fafc;
             min-height: 100vh;
             padding-bottom: 60px;
@@ -79,7 +78,7 @@
         h1 {
             text-align: center;
             font-size: 2.3rem;
-            color: #102a43;
+            color: #ffffff;
             font-weight: 800;
             letter-spacing: 0.5px;
         }
@@ -115,11 +114,11 @@
 
         nav a:hover {
             color: #0f172a;
-            background-color: #e2e8f0;
+            background-color: #cbd5e1;
         }
 
         nav a.active {
-            color: #e2e8f0;
+            color: #ffffff;
             background-color: #0052cc;
             box-shadow: 0 4px 12px rgba(0, 82, 204, 0.25);
         }
@@ -127,16 +126,17 @@
         /* --- CONTENT CARD CONTAINER --- */
         .content-box {
             max-width: 850px;
-            margin: 0 auto;
+            margin: 0 auto 50px auto; /* Margin-bottom creates space between sections */
             padding: 0 20px;
         }
 
-        section {
+        section#about {
             background: #e2e8f0;
             border-radius: 16px;
             padding: 35px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
             border: 1px solid #cbd5e1;
+            color: #0f172a;
         }
 
         section h2 {
@@ -208,7 +208,7 @@
             gap: 15px;
             margin-top: 25px;
             padding-top: 20px;
-            border-top: 1px solid #e4e7eb;
+            border-top: 1px solid #cbd5e1;
         }
 
         .ai-gallery.show {
@@ -217,18 +217,17 @@
         }
 
         .gallery-card {
-            background: #f8fafc;
+            background: #ffffff;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            border: 1px solid #d9e2ec;
+            border: 1px solid #cbd5e1;
         }
 
         .gallery-card img {
             width: 100%;
             height: 160px;
             object-fit: cover;
-            filter: contrast(102%) brightness(98%); /* Matches cold tone theme */
         }
 
         .gallery-card p {
@@ -244,6 +243,128 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* --- ANNOUNCEMENTS SECTION STYLES --- */
+        .announcements-container {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: #f8fafc;
+            margin: 0;
+        }
+
+        .view-all {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .announcement-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-left-width: 4px;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .announcement-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+        }
+
+        .exam-border { border-left-color: #7c3aed; }
+        .achievement-border { border-left-color: #059669; }
+        .holiday-border { border-left-color: #d97706; }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .pill-exam { 
+            background: rgba(168, 85, 247, 0.15); 
+            color: #c084fc; 
+            border: 1px solid rgba(168, 85, 247, 0.3); 
+            font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px;
+        }
+
+        .pill-achievement { 
+            background: rgba(16, 185, 129, 0.15); 
+            color: #34d399; 
+            border: 1px solid rgba(16, 185, 129, 0.3); 
+            font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px;
+        }
+
+        .pill-holiday { 
+            background: rgba(245, 158, 11, 0.15); 
+            color: #fbbf24; 
+            border: 1px solid rgba(245, 158, 11, 0.3); 
+            font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px;
+        }
+
+        time {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .announcement-card h3 {
+            color: #f8fafc;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .announcement-card p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .action-btn {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #102a43;
+            color: #9fb3c8;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+            border-top: 3px solid #0052cc;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
@@ -252,134 +373,6 @@
             .school-logo { width: 95px; height: 95px; }
             .logo-text { font-size: 0.55rem; }
         }
-        .announcements-container {
-  font-family: system-ui, -apple-system, sans-serif;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px;
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.section-header h2 {
-  font-size: 1.5rem;
-  color: #0f172a;
-  margin: 0;
-}
-
-.view-all {
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.announcement-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-left-width: 4px;
-  border-radius: 8px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.announcement-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-}
-
-.exam-border { border-left-color: #7c3aed; }
-.achievement-border { border-left-color: #059669; }
-.holiday-border { border-left-color: #d97706; }
-
-.card-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-/* CHANGE: Use low-opacity dark backgrounds with brighter text colors */
-.pill-exam { 
-  background: rgba(168, 85, 247, 0.15); 
-  color: #c084fc; 
-  border: 1px solid rgba(168, 85, 247, 0.3); 
-}
-
-.pill-achievement { 
-  background: rgba(16, 185, 129, 0.15); 
-  color: #34d399; 
-  border: 1px solid rgba(16, 185, 129, 0.3); 
-}
-
-.pill-holiday { 
-  background: rgba(245, 158, 11, 0.15); 
-  color: #fbbf24; 
-  border: 1px solid rgba(245, 158, 11, 0.3); 
-}
-
-time {
-  font-size: 0.8rem;
-  color: #64748b;
-}
-
-/* CHANGE: Darken card backgrounds and structural borders */
-.announcement-card,
-.ticker-wrapper {
-  background: #0f172a;       /* Was: #ffffff (for cards) */
-  border-color: #1e293b;     /* Was: #e2e8f0 */
-}
-
-/* CHANGE: Brighten card titles and body text for readability */
-.announcement-card h3 {
-  color: #f8fafc;            /* Was: #1e293b */
-}
-
-.announcement-card p {
-  color: #cbd5e1;            /* Was: #475569 */
-}
-
-time {
-  color: #94a3b8;            /* Was: #64748b */
-}
-
-/* CHANGE: Swap dark text buttons for high-contrast light blue links */
-.action-btn {
-  color: #38bdf8;            /* Was: #0f172a */
-}
-
-.view-all,
-.ticker-link {
-  color: #60a5fa;            /* Was: #2563eb */
-}
-        /* Footer Styling */
-footer {
-    background-color: #102a43; /* Dark Navy Cold Tone */
-    color: #9fb3c8;           /* Cool Gray Text */
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    margin-top: 40px;
-    border-top: 3px solid #0052cc;
-}
-
-footer p {
-    margin: 5px 0;
-}
     </style>
 </head>
 <body>
@@ -404,25 +397,23 @@ footer p {
         <a href="contact.html">Contact</a>
     </nav>
 
-   <!-- Main Content Section -->
-<div class="content-box" style="background-color: #e2e8f0; color: #0f172a; padding: 24px; border-radius: 12px;">
-    <section id="about">
-        <h2>About Our School</h2>
-        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&h=200&q=80" alt="School Building" class="section-img">
-        <p> Welcome to Bright Future School! We provide high-quality education, modern classrooms, and a supportive environment for all students. 
-            <span style="color: #0052cc; font-weight: 600;">Our dedicated teachers inspire critical thinking, creativity, and a lifelong love for learning in every child.</span> 
-            <span style="color: #007791; font-weight: 600;">Through innovative programs and state-of-the-art facilities, we prepare our students to excel in a rapidly changing world.</span> 
-            <span style="color: #102a43; font-weight: 700;">Together, we build a bright, confident, and successful community where every learner thrives.</span>
-        </p>
-    </section>
-</div>
+    <!-- Section 1: Main Content Box -->
+    <div class="content-box">
+        <section id="about">
+            <h2>About Our School</h2>
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&h=200&q=80" alt="School Building" class="section-img">
+            <p> Welcome to Bright Future School! We provide high-quality education, modern classrooms, and a supportive environment for all students. 
+                <span style="color: #0052cc; font-weight: 600;">Our dedicated teachers inspire critical thinking, creativity, and a lifelong love for learning in every child.</span> 
+                <span style="color: #007791; font-weight: 600;">Through innovative programs and state-of-the-art facilities, we prepare our students to excel in a rapidly changing world.</span> 
+                <span style="color: #102a43; font-weight: 700;">Together, we build a bright, confident, and successful community where every learner thrives.</span>
+            </p>
 
-            <!-- Interactive AI Photos Button -->
+            <!-- Interactive AI Photos Button (Now inside the section) -->
             <div class="btn-container">
                 <button class="ai-btn" onclick="toggleGallery()">✨ Our school</button>
             </div>
 
-            <!-- AI Photo Gallery Section -->
+            <!-- AI Photo Gallery Section (Now inside the section) -->
             <div class="ai-gallery" id="aiGallery">
                 <div class="gallery-card">
                     <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=500&q=80" alt="AI Science Campus">
@@ -437,71 +428,70 @@ footer p {
         </section>
     </div>
 
+    <!-- Section 2: Notice Board & Announcements (Separated with gap) -->
+    <section class="announcements-container">
+        <div class="section-header">
+            <h2>Notice Board & Announcements</h2>
+            <a href="#" class="view-all">View All (12) →</a>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Exam Schedule Card -->
+            <article class="announcement-card exam-border">
+                <div class="card-meta">
+                    <span class="pill pill-exam">Exam Schedule</span>
+                    <time>Oct 12, 2026</time>
+                </div>
+                <h3>Fall 2026 Mid-Term Examination Dates</h3>
+                <p>The detailed room allocations and timetable for undergraduate mid-terms are now available.</p>
+                <div class="card-footer">
+                    <a href="#" class="action-btn">Download PDF</a>
+                </div>
+            </article>
+
+            <!-- Achievement Card -->
+            <article class="announcement-card achievement-border">
+                <div class="card-meta">
+                    <span class="pill pill-achievement">Achievement</span>
+                    <time>Oct 08, 2026</time>
+                </div>
+                <h3>1st Place: National Collegiate Robotics</h3>
+                <p>Congratulations to Team Alpha for securing gold in the Autonomous Rover division!</p>
+                <div class="card-footer">
+                    <a href="#" class="action-btn">Read Story</a>
+                </div>
+            </article>
+
+            <!-- Holiday Reminder Card -->
+            <article class="announcement-card holiday-border">
+                <div class="card-meta">
+                    <span class="pill pill-holiday">Holiday Notice</span>
+                    <time>Oct 05, 2026</time>
+                </div>
+                <h3>Campus Closure: Autumn Break</h3>
+                <p>Administrative offices and academic blocks will remain closed from Oct 24 through Oct 26.</p>
+                <div class="card-footer">
+                    <a href="#" class="action-btn">Library Hours</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Bright Future School. All rights reserved.</p>
+            <p>123 Education Street | info@brightfutureschool.edu | 0123456789</p>
+        </div>
+    </footer>
+
     <!-- Script to Handle Photo Display -->
     <script>
         function toggleGallery() {
             const gallery = document.getElementById('aiGallery');
-            if (gallery.classList.contains('show')) {
-                gallery.classList.remove('show');
-            } else {
-                gallery.classList.add('show');
-            }
+            gallery.classList.toggle('show');
         }
     </script>
-    <section class="announcements-container">
-  <div class="section-header">
-    <h2>Notice Board & Announcements</h2>
-    <a href="#" class="view-all">View All (12) →</a>
-  </div>
-
-  <div class="cards-grid">
-    <!-- Exam Schedule Card -->
-    <article class="announcement-card exam-border">
-      <div class="card-meta">
-        <span class="pill pill-exam">Exam Schedule</span>
-        <time>Oct 12, 2026</time>
-      </div>
-      <h3>Fall 2026 Mid-Term Examination Dates</h3>
-      <p>The detailed room allocations and timetable for undergraduate mid-terms are now available.</p>
-      <div class="card-footer">
-        <a href="#" class="action-btn">Download PDF</a>
-      </div>
-    </article>
-
-    <!-- Achievement Card -->
-    <article class="announcement-card achievement-border">
-      <div class="card-meta">
-        <span class="pill pill-achievement">Achievement</span>
-        <time>Oct 08, 2026</time>
-      </div>
-      <h3>1st Place: National Collegiate Robotics</h3>
-      <p>Congratulations to Team Alpha for securing gold in the Autonomous Rover division!</p>
-      <div class="card-footer">
-        <a href="#" class="action-btn">Read Story</a>
-      </div>
-    </article>
-
-    <!-- Holiday Reminder Card -->
-    <article class="announcement-card holiday-border">
-      <div class="card-meta">
-        <span class="pill pill-holiday">Holiday Notice</span>
-        <time>Oct 05, 2026</time>
-      </div>
-      <h3>Campus Closure: Autumn Break</h3>
-      <p>Administrative offices and academic blocks will remain closed from Oct 24 through Oct 26.</p>
-      <div class="card-footer">
-        <a href="#" class="action-btn">Library Hours</a>
-      </div>
-    </article>
-  </div>
-</section>
-            
-    <footer>
-    <div class="footer-content">
-        <p>&copy; 2026 Bright Future School. All rights reserved.</p>
-        <p>123 Education Street | info@brightfutureschool.edu | 0123456789</p>
-    </div>
-</footer>
 
 </body>
 </html>
