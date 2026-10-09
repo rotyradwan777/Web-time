@@ -16,8 +16,8 @@
         }
 
         body {
-            background: #f0f4f8; /* Cool blue-gray background */
-            color: #243b53;
+            background: #020617; /*Slate 950 - Darkest Blue */
+            color: #f8fafc;
             min-height: 100vh;
             padding-bottom: 60px;
         }
@@ -312,46 +312,58 @@
   margin-bottom: 12px;
 }
 
-.pill {
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 12px;
-  text-transform: uppercase;
+/* CHANGE: Use low-opacity dark backgrounds with brighter text colors */
+.pill-exam { 
+  background: rgba(168, 85, 247, 0.15); 
+  color: #c084fc; 
+  border: 1px solid rgba(168, 85, 247, 0.3); 
 }
 
-.pill-exam { background: #f3e8ff; color: #6b21a8; }
-.pill-achievement { background: #d1fae5; color: #065f46; }
-.pill-holiday { background: #fef3c7; color: #92400e; }
+.pill-achievement { 
+  background: rgba(16, 185, 129, 0.15); 
+  color: #34d399; 
+  border: 1px solid rgba(16, 185, 129, 0.3); 
+}
+
+.pill-holiday { 
+  background: rgba(245, 158, 11, 0.15); 
+  color: #fbbf24; 
+  border: 1px solid rgba(245, 158, 11, 0.3); 
+}
 
 time {
   font-size: 0.8rem;
   color: #64748b;
 }
 
+/* CHANGE: Darken card backgrounds and structural borders */
+.announcement-card,
+.ticker-wrapper {
+  background: #0f172a;       /* Was: #ffffff (for cards) */
+  border-color: #1e293b;     /* Was: #e2e8f0 */
+}
+
+/* CHANGE: Brighten card titles and body text for readability */
 .announcement-card h3 {
-  font-size: 1.1rem;
-  color: #1e293b;
-  margin: 0 0 8px 0;
+  color: #f8fafc;            /* Was: #1e293b */
 }
 
 .announcement-card p {
-  font-size: 0.9rem;
-  color: #475569;
-  line-height: 1.5;
-  margin: 0 0 16px 0;
-  flex-grow: 1;
+  color: #cbd5e1;            /* Was: #475569 */
 }
 
+time {
+  color: #94a3b8;            /* Was: #64748b */
+}
+
+/* CHANGE: Swap dark text buttons for high-contrast light blue links */
 .action-btn {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #0f172a;
-  text-decoration: none;
+  color: #38bdf8;            /* Was: #0f172a */
 }
 
-.action-btn:hover {
-  color: #2563eb;
+.view-all,
+.ticker-link {
+  color: #60a5fa;            /* Was: #2563eb */
 }
         /* Footer Styling */
 footer {
