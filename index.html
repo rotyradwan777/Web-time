@@ -15,14 +15,24 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            background: #1e293b; /* Lighter dark blue (Slate 800) */
-            color: #f8fafc;
-            min-height: 100vh;
-            padding-bottom: 60px;
-        }
+html {
+    height: 100%;
+}
 
-        /* --- BRANDING & HEADER --- */
+body {
+    background: #1e293b;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-bottom: 0; 
+}
+
+main {
+    flex: 1;
+}
+
         .header-container {
             display: flex;
             flex-direction: column;
