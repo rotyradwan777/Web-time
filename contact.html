@@ -16,25 +16,32 @@
         }
 
         body {
-            background: #f0f4f8;
-            color: #243b53;
+            background: #1e293b; /* Lighter dark blue (Slate 800) matching index */
+            color: #f8fafc;
             min-height: 100vh;
-            padding-bottom: 60px;
+            display: flex;
+            flex-direction: column;
         }
 
         /* --- HEADER --- */
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px 15px 20px;
+        }
+
         h1 {
             text-align: center;
-            font-size: 2.5rem;
-            color: #102a43;
-            padding: 30px 20px 15px 20px;
+            font-size: 2.3rem;
+            color: #ffffff;
             font-weight: 800;
             letter-spacing: 0.5px;
         }
 
-        /* --- STYLISH NAVIGATION BAR --- */
+        /* --- STYLISH NAVIGATION BAR (Matching index.html) --- */
         nav {
-            background: #ffffff;
+            background: #e2e8f0;
             max-width: 850px;
             margin: 0 auto 40px auto;
             padding: 10px 15px;
@@ -45,7 +52,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 6px;
-            border: 1px solid #e4e7eb;
+            border: 1px solid #cbd5e1;
             position: sticky;
             top: 15px;
             z-index: 1000;
@@ -61,31 +68,36 @@
             transition: all 0.25s ease-in-out;
         }
 
-        /* Hover & Active States */
         nav a:hover {
-            color: #0052cc;
-            background-color: #f0f4ff;
+            color: #0f172a;
+            background-color: #cbd5e1;
         }
 
         nav a.active {
-            color: #ffffff;
-            background-color: #0052cc;
-            box-shadow: 0 4px 12px rgba(0, 82, 204, 0.25);
+            color: #020617;
+            background-color: #f59e0b;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        /* --- MAIN WRAPPER --- */
+        main {
+            flex: 1;
         }
 
         /* --- CONTENT CARD CONTAINER --- */
         .content-box {
             max-width: 850px;
-            margin: 0 auto;
+            margin: 0 auto 50px auto;
             padding: 0 20px;
         }
 
-        section {
-            background: #ffffff;
+        section#contact {
+            background: #e2e8f0; /* Slate Silver section box matching index */
             border-radius: 16px;
             padding: 35px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e4e7eb;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid #cbd5e1;
+            color: #0f172a;
         }
 
         section h2 {
@@ -96,7 +108,6 @@
             padding-bottom: 10px;
         }
 
-        /* Accent bar under titles */
         section h2::after {
             content: '';
             position: absolute;
@@ -108,7 +119,6 @@
             border-radius: 2px;
         }
 
-        /* Image Styling */
         .section-img {
             width: 100%;
             height: 280px;
@@ -118,41 +128,42 @@
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
         }
 
-        /* Contact Details Styling */
+        /* --- CONTACT DETAILS STYLING --- */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .contact-card {
-            background: #f8fafc;
-            border-left: 4px solid #0052cc;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-            transition: transform 0.2s ease;
+            background: #ffffff;
+            border-left: 5px solid #0052cc;
+            padding: 18px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #cbd5e1;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .contact-card:hover {
             transform: translateY(-2px);
-            background: #f0f4ff;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            background: #f8fafc;
         }
 
         .contact-label {
             font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
-            color: #627d98;
-            margin-bottom: 5px;
+            color: #475569;
+            margin-bottom: 6px;
         }
 
         .contact-value {
             font-size: 1rem;
             font-weight: 600;
             color: #102a43;
-            text-decoration: none;
         }
 
         .contact-value a {
@@ -164,62 +175,79 @@
             text-decoration: underline;
         }
 
+        /* Footer Styling (Matching Navy Blue) */
+        footer {
+            background-color: #001f3f; /* Deep Navy Blue */
+            color: #e2e8f0;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+            border-top: 3px solid #0052cc;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-            nav {
-                border-radius: 16px;
-                padding: 8px;
-            }
-            nav a {
-                padding: 6px 12px;
-                font-size: 0.85rem;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
+            h1 { font-size: 1.8rem; }
+            nav { border-radius: 16px; padding: 8px; }
+            nav a { padding: 6px 12px; font-size: 0.85rem; }
+            .contact-grid { grid-template-columns: 1fr; }
         }
-        /* Footer Styling */
-footer {
-    background-color: #102a43; /* Dark Navy Cold Tone */
-    color: #9fb3c8;           /* Cool Gray Text */
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    margin-top: 40px;
-    border-top: 3px solid #0052cc;
-}
-
-footer p {
-    margin: 5px 0;
-}
     </style>
 </head>
 <body>
 
-    <h1>Bright Future School</h1>
+    <main>
+        <!-- Header Container -->
+        <div class="header-container">
+            <h1>Bright Future School</h1>
+        </div>
 
-    <nav>
-        <a href="index.html">About</a> 
-        <a href="schedule.html">Schedule</a> 
-        <a href="events.html">Events</a> 
-        <a href="contact.html" class="active">Contact</a>
-    </nav>
+        <!-- Navigation bar -->
+        <nav>
+            <a href="index.html">About</a> 
+            <a href="schedule.html">Schedule</a> 
+            <a href="events.html">Events</a> 
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
 
-    <div class="content-box">
-        <section id="contact">
-            <h2>How to Contact Us</h2>
-            <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=600&h=200&q=80" alt="Contact Us" class="section-img">
-            <p>By phone: 0123456789<br>By email: info@brightfutureschool.edu<br>Address: 123 Education Street</p>
-        </section>
-    </div>
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2026 Bright Future School. All rights reserved.</p>
-        <p>123 Education Street | info@brightfutureschool.edu | 0123456789</p>
-    </div>
-</footer>
+        <!-- Contact Content Section -->
+        <div class="content-box">
+            <section id="contact">
+                <h2>How to Contact Us</h2>
+                <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=600&h=200&q=80" alt="Contact Us" class="section-img">
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-label">📞 By Phone</div>
+                        <div class="contact-value"><a href="tel:0123456789">0123456789</a></div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-label">✉️ By Email</div>
+                        <div class="contact-value"><a href="mailto:info@brightfutureschool.edu">info@brightfutureschool.edu</a></div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-label">📍 Address</div>
+                        <div class="contact-value">123 Education Street</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Bright Future School. All rights reserved.</p>
+            <p>123 Education Street | info@brightfutureschool.edu | 0123456789</p>
+        </div>
+    </footer>
+
 </body>
 </html>
